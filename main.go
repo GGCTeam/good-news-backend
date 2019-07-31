@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "github.com/kanzitelli/good-news-backend/server"
 
 func main() {
-	fmt.Println("backend for GOOD.NEWS written in Golang.")
+	server.Init()
 }
