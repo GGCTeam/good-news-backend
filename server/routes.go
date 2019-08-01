@@ -1,6 +1,8 @@
 package server
 
 import (
+	"github.com/kanzitelli/good-news-backend/controllers"
+
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
@@ -26,11 +28,12 @@ func NewRouter() *gin.Engine {
 
 	v1 := router.Group("v1")
 	{
-		v1.GET("/hello", func(c *gin.Context) {
-			c.JSON(200, gin.H{
-				"message": "pong",
-			})
-		})
+		news := v1.Group("news")
+		{
+			nc := controllers.NewsController{}
+
+			news.GET("/", nc.Get)
+		}
 	}
 
 	return router
