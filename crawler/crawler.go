@@ -12,6 +12,10 @@ type NewsCrawler interface {
 	Run() []models.News
 }
 
+// NewsFunc <type>
+// is used to simplify news func type signature
+type NewsFunc func() []models.News
+
 // Start <function>
 // is used to start process of web resources crawling every 3 minutes
 func Start() {
@@ -23,6 +27,7 @@ func startCrawler() {
 	crawlers := []NewsCrawler{
 		SecretMag{},
 		TheoryAndPractice{},
+		TheVillage{},
 	}
 
 	// duration of each crawling process

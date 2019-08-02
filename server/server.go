@@ -11,10 +11,10 @@ func Init() {
 	// utils.InitEnvVars()
 
 	// services
-	crawler.Start()
 	// db.InitService()
 
 	// workers
+	crawler.Start()
 	// workers.InitRecieptsDeletion()
 
 	r := NewRouter()
