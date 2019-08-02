@@ -1,5 +1,9 @@
 package server
 
+import (
+	"github.com/kanzitelli/good-news-backend/crawler"
+)
+
 // Init <function>
 // is used to initialize server and all the corresponding services such as DB, Utils, Workers
 func Init() {
@@ -7,6 +11,7 @@ func Init() {
 	// utils.InitEnvVars()
 
 	// services
+	crawler.Start()
 	// db.InitService()
 
 	// workers
