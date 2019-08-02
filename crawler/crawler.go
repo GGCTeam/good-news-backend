@@ -19,14 +19,16 @@ func Start() {
 }
 
 func startCrawler() {
+	// array of crawlers for different news sources which implement NewsCrawler interface.
 	crawlers := []NewsCrawler{
 		SecretMag{},
 		TheoryAndPractice{},
 	}
+
+	// duration of each crawling process
 	duration := time.Second * 5 // time.Minute * 3
 
 	for range time.Tick(duration) {
-		// fmt.Println("go and do crawling")
 		for _, cr := range crawlers {
 			cr.Run()
 		}

@@ -18,13 +18,18 @@ func NewRouter() *gin.Engine {
 	// 	gin.SetMode(gin.ReleaseMode)
 	// }
 
+	// replace with GIN_MODE=release in .env file
 	gin.SetMode(gin.DebugMode)
 
 	router := gin.New()
 
+	// GIN middlewares
 	router.Use(gin.Recovery())
 	router.Use(gin.Logger())
 	router.Use(cors.Default())
+
+	// GIN static files serving
+	router.Static("/images", "./images")
 
 	v1 := router.Group("v1")
 	{
