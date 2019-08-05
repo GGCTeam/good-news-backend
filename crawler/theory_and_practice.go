@@ -13,8 +13,8 @@ import (
 type TheoryAndPractice struct{}
 
 const (
-	baseURLTP  = "https://theoryandpractice.ru"
-	crawlURLTP = "https://theoryandpractice.ru/posts"
+	baseURL_TP  = "https://theoryandpractice.ru"
+	crawlURL_TP = "https://theoryandpractice.ru/posts"
 )
 
 // Run <function>
@@ -52,7 +52,7 @@ func (tp TheoryAndPractice) runPosts() []models.News {
 
 				news = append(news, models.News{
 					Title:      title,
-					Link:       fmt.Sprintf("%s%s", baseURLTP, link),
+					Link:       fmt.Sprintf("%s%s", baseURL_TP, link),
 					Preamble:   preamble,
 					TimeAdded:  time.Now().Unix(),
 					NewsType:   models.TypePost,
@@ -62,10 +62,8 @@ func (tp TheoryAndPractice) runPosts() []models.News {
 		}
 	})
 
-	newsCollector.Visit(crawlURLTP)
+	newsCollector.Visit(crawlURL_TP)
 	newsCollector.Wait()
-
-	fmt.Println(news)
 
 	return news
 }

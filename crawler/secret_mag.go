@@ -13,8 +13,8 @@ import (
 type SecretMag struct{}
 
 const (
-	baseURLSM  = "https://secretmag.ru"
-	crawlURLSM = "https://secretmag.ru/news"
+	baseURL_SM  = "https://secretmag.ru"
+	crawlURL_SM = "https://secretmag.ru/news"
 )
 
 // Run <function>
@@ -50,7 +50,7 @@ func (sm SecretMag) runNews() []models.News {
 
 				news = append(news, models.News{
 					Title:      title,
-					Link:       fmt.Sprintf("%s%s", baseURLSM, link),
+					Link:       fmt.Sprintf("%s%s", baseURL_SM, link),
 					Preamble:   "",
 					TimeAdded:  time.Now().Unix(),
 					NewsType:   models.TypeNews,
@@ -60,7 +60,7 @@ func (sm SecretMag) runNews() []models.News {
 		})
 	})
 
-	newsCollector.Visit(crawlURLSM)
+	newsCollector.Visit(crawlURL_SM)
 	newsCollector.Wait()
 
 	return news
