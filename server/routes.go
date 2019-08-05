@@ -23,14 +23,15 @@ func NewRouter() *gin.Engine {
 
 	router := gin.New()
 
-	// GIN middlewares
+	// middlewares
 	router.Use(gin.Recovery())
 	router.Use(gin.Logger())
 	router.Use(cors.Default())
 
-	// GIN static files serving
+	// static files serving
 	router.Static("/images", "./images")
 
+	// endpoints
 	v1 := router.Group("v1")
 	{
 		news := v1.Group("news")

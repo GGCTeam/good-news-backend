@@ -34,8 +34,16 @@ func startCrawler() {
 	duration := time.Second * 5 // time.Minute * 3
 
 	for range time.Tick(duration) {
+		// all news collected from each crawler
+		var totalNews []models.News
+
 		for _, cr := range crawlers {
-			cr.Run()
+			totalNews = append(totalNews, cr.Run()...)
+			// fmt.Println(totalNews)
+
+			// here we run all crawlers
+			// get all new news
+			// then trying to insert them to mongo db
 		}
 	}
 }

@@ -1,10 +1,25 @@
 package models
 
-const (
-	TypeNews     string = "news"
-	TypePost     string = "post"
-	TypeBusiness string = "business"
-	TypeStyle    string = "style"
+var (
+	TypeNews = NewsType{
+		Type: "news",
+		Name: "Новости",
+	}
+
+	TypePost = NewsType{
+		Type: "post",
+		Name: "Пост",
+	}
+
+	TypeBusiness = NewsType{
+		Type: "business",
+		Name: "Бизнес",
+	}
+
+	TypeStyle = NewsType{
+		Type: "style",
+		Name: "Стиль",
+	}
 )
 
 // NewsType <struct>
