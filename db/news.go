@@ -16,9 +16,13 @@ func (s Service) NewsInsert(news []models.News) error {
 	ctx, cncl := s.CTX(5)
 	defer cncl()
 
+	// we cast it to array of interfaces because mongo driver asks so
+	var iNews []interface{} // []models.NewsType
+	iNews = append(iNews, news)
+
 	_, err := c.InsertMany(
 		ctx,
-		news,
+		iNews,
 		s.InsertManyOptionsOrdered(),
 	)
 

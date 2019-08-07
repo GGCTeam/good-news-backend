@@ -20,5 +20,6 @@ func Init() {
 	crawler.Start()
 
 	r := NewRouter()
-	r.Run(":6969")
+	// r.Run(":6969")
+	r.Run(":80")
 }

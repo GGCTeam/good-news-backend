@@ -21,11 +21,14 @@ func (s Service) fillNewsSources() error {
 	ctx, cncl := s.CTX(5)
 	defer cncl()
 
-	newsSources := []models.NewsSource{
+	// we cast it to array of interfaces because mongo driver asks so
+	var newsSources []interface{} // []models.NewsSource
+	newsSources = append(
+		newsSources,
 		models.SecretMagNewsSource,
 		models.TheVillageNewsSource,
 		models.TheoryAndPracticeNewsSource,
-	}
+	)
 
 	_, err := c.InsertMany(
 		ctx,
@@ -43,12 +46,15 @@ func (s Service) fillNewsTypes() error {
 	ctx, cncl := s.CTX(5)
 	defer cncl()
 
-	newsTypes := []models.NewsType{
+	// we cast it to array of interfaces because mongo driver asks so
+	var newsTypes []interface{} // []models.NewsType
+	newsTypes = append(
+		newsTypes,
 		models.TypeNews,
 		models.TypeBusiness,
 		models.TypePost,
 		models.TypeStyle,
-	}
+	)
 
 	_, err := c.InsertMany(
 		ctx,
