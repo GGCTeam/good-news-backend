@@ -1,9 +1,11 @@
 package controllers
 
 import (
-	"fmt"
+	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
+	"github.com/kanzitelli/good-news-backend/db"
 )
 
 // NewsController <controller>
@@ -14,9 +16,24 @@ type NewsController struct{}
 // is used to handle get action of news controller which will return <count> number of news.
 // url: /v1/news?count=80 , by default <count> = 50
 func (nc NewsController) Get(c *gin.Context) {
-	count := c.DefaultQuery("count", "50")
+	countStr := c.DefaultQuery("count", "50")
+	count, err := strconv.Atoi(countStr)
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{
+			"error": "Please, enter corrent number of count parameter.",
+		})
+		return
+	}
 
-	c.JSON(200, gin.H{
-		"news": fmt.Sprintf("with count : %s", count),
-	})
+	dbClient := db.GetClient()
+	news, err := dbClient.NewsGet(int64(count))
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
+			"error":       "Problem with fetching news from DB",
+			"description": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, news)
 }

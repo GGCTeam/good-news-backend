@@ -21,8 +21,6 @@ const (
 // Run <function>
 // is used to start crawling process.
 func (tp TheoryAndPractice) Run() []models.News {
-	fmt.Println("Crawling TheoryAndPractice...")
-
 	var totalNews []models.News
 	newsFuncs := []NewsFunc{
 		tp.runPosts,

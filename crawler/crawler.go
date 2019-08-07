@@ -32,7 +32,7 @@ func startCrawler() {
 	}
 
 	// duration of each crawling process
-	duration := time.Second * 60 // time.Minute * 3
+	duration := time.Minute * 3
 
 	for range time.Tick(duration) {
 		// all news collected from each crawler
@@ -40,14 +40,9 @@ func startCrawler() {
 
 		for _, cr := range crawlers {
 			totalNews = append(totalNews, cr.Run()...)
-
-			dbClient := db.GetClient()
-			dbClient.NewsInsert(totalNews)
-			// fmt.Println(totalNews)
-
-			// here we run all crawlers
-			// get all new news
-			// then trying to insert them to mongo db
 		}
+
+		dbClient := db.GetClient()
+		dbClient.NewsInsert(totalNews) // here it should show error but it will be ignored by mongo and it will continue to write
 	}
 }

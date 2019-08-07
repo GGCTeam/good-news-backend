@@ -2,4 +2,3 @@ good-news-backend
 vendor
 .vscode
 appdata/
-docker-compose.yml

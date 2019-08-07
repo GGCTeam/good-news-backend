@@ -23,8 +23,6 @@ const (
 // Run <function>
 // is used to start crawling process.
 func (tv TheVillage) Run() []models.News {
-	fmt.Println("Crawling TheVillage...")
-
 	var totalNews []models.News
 	newsFuncs := []NewsFunc{
 		tv.runNews,

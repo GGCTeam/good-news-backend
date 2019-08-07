@@ -21,8 +21,6 @@ const (
 // Run <function>
 // is used to start crawling process.
 func (sm SecretMag) Run() []models.News {
-	fmt.Println("Crawling SecretMag...")
-
 	var totalNews []models.News
 	newsFuncs := []NewsFunc{
 		sm.runNews,

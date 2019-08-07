@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  reverse-proxy:
+    image: traefik:v2.0
+    container_name: traefik
+    command: --api --providers.docker
+    ports:
+      - "6969:80"
+      - "6970:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  api:
+    build: ./
+    restart: always
+    container_name: api
+    environment:
+      - API_DEBUGMODE=${API_GIN_DEBUG_MODE}
+      - API_MONGODBNAME=${MONGO_DB_NAME}
+      - API_MONGODBURL=mongodb://${MONGO_DB_USER}:${MONGO_DB_PSWD}@mongo:27017/${MONGO_DB_NAME}
+    depends_on:
+      - mongo
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.rule=Host(`localhost`)"
+
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ADMIN}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ADMIN_PSWD}
+    volumes:
+      - ./appdata/db:/data/db
+    labels:
+      - "traefik.enable=false"
