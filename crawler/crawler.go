@@ -1,6 +1,8 @@
 package crawler
 
 import (
+	"crypto/sha1"
+	"encoding/hex"
 	"time"
 
 	"github.com/kanzitelli/good-news-backend/models"
@@ -46,4 +48,13 @@ func startCrawler() {
 			// then trying to insert them to mongo db
 		}
 	}
+}
+
+// makeHash <function>
+// is used to create hash from string
+func makeHash(s string) string {
+	h := sha1.New()
+	h.Write([]byte(s))
+
+	return hex.EncodeToString(h.Sum(nil))
 }

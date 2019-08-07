@@ -46,15 +46,19 @@ func (sm SecretMag) runNews() []models.News {
 		divWrapper.ForEach(".container", func(i1 int, divContainer *colly.HTMLElement) {
 			divContainer.ForEach(".item", func(i2 int, divItem *colly.HTMLElement) {
 				link := divItem.ChildAttr("a[href]", "href")
+				fullLink := fmt.Sprintf("%s%s", baseURL_SM, link)
 				title := divItem.ChildText(".headline")
 
+				_id := makeHash(fullLink) // here we are going to create hash from full link in order to set ID of a news to hash value, so mongo won't add in case of duplicates
+
 				news = append(news, models.News{
+					ID:         _id,
 					Title:      title,
-					Link:       fmt.Sprintf("%s%s", baseURL_SM, link),
+					Link:       fullLink,
 					Preamble:   "",
 					TimeAdded:  time.Now().Unix(),
 					NewsType:   models.TypeNews,
-					NewsSource: models.SecretMagNewSource,
+					NewsSource: models.SecretMagNewsSource,
 				})
 			})
 		})

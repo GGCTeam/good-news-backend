@@ -47,16 +47,20 @@ func (tp TheoryAndPractice) runPosts() []models.News {
 		if divPostsContainer.Attr("role") == "postsContainer" {
 			divPostsContainer.ForEach(".preview-box-post", func(i1 int, divPost *colly.HTMLElement) {
 				link := divPost.ChildAttr("a[href]", "href")
+				fullLink := fmt.Sprintf("%s%s", baseURL_TP, link)
 				title := divPost.ChildText(".preview-box-post-title")
 				preamble := divPost.ChildText(".preview-box-post-descr")
 
+				_id := makeHash(fullLink) // here we are going to create hash from full link in order to set ID of a news to hash value, so mongo won't add in case of duplicates
+
 				news = append(news, models.News{
+					ID:         _id,
 					Title:      title,
-					Link:       fmt.Sprintf("%s%s", baseURL_TP, link),
+					Link:       fullLink,
 					Preamble:   preamble,
 					TimeAdded:  time.Now().Unix(),
 					NewsType:   models.TypePost,
-					NewsSource: models.TheoryAndPracticeNewSource,
+					NewsSource: models.TheoryAndPracticeNewsSource,
 				})
 			})
 		}

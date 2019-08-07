@@ -3,6 +3,7 @@ package models
 // News <model>
 // is used to describe article model.
 type News struct {
+	ID         string     `json:"_id" bson:"_id"`
 	Title      string     `json:"title" bson:"title"`
 	Preamble   string     `json:"preamble" bson:"preamble"`
 	TimeAdded  int64      `json:"time_added" bson:"time_added"`

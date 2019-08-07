@@ -49,29 +49,37 @@ func (tv TheVillage) runNews() []models.News {
 	newsCollector.OnHTML(".content", func(divContent *colly.HTMLElement) {
 		divContent.ForEach(".post-item-microformat", func(i1 int, divItem *colly.HTMLElement) {
 			link := divItem.ChildAttr("a[href]", "href")
+			fullLink := fmt.Sprintf("%s%s", baseURL_TV, link)
 			title := divItem.ChildText(".post-title")
 
+			_id := makeHash(fullLink) // here we are going to create hash from full link in order to set ID of a news to hash value, so mongo won't add in case of duplicates
+
 			news = append(news, models.News{
+				ID:         _id,
 				Title:      title,
-				Link:       fmt.Sprintf("%s%s", baseURL_TV, link),
+				Link:       fullLink,
 				Preamble:   "",
 				TimeAdded:  time.Now().Unix(),
 				NewsType:   models.TypePost,
-				NewsSource: models.TheVillageNewSource,
+				NewsSource: models.TheVillageNewsSource,
 			})
 		})
 
 		divContent.ForEach(".post-item-news", func(i1 int, divItem *colly.HTMLElement) {
 			link := divItem.ChildAttr("a[href]", "href")
+			fullLink := fmt.Sprintf("%s%s", baseURL_TV, link)
 			title := divItem.ChildText(".post-title")
 
+			_id := makeHash(fullLink) // here we are going to create hash from full link in order to set ID of a news to hash value, so mongo won't add in case of duplicates
+
 			news = append(news, models.News{
+				ID:         _id,
 				Title:      title,
-				Link:       fmt.Sprintf("%s%s", baseURL_TV, link),
+				Link:       fullLink,
 				Preamble:   "",
 				TimeAdded:  time.Now().Unix(),
 				NewsType:   models.TypeNews,
-				NewsSource: models.TheVillageNewSource,
+				NewsSource: models.TheVillageNewsSource,
 			})
 		})
 	})
@@ -92,16 +100,20 @@ func (tv TheVillage) runBusiness() []models.News {
 	newsCollector.OnHTML(".row-cont", func(divContent *colly.HTMLElement) {
 		divContent.ForEach(".post-block-featured", func(i1 int, divItem *colly.HTMLElement) {
 			link := divItem.ChildAttr("a[href]", "href")
+			fullLink := fmt.Sprintf("%s%s", baseURL_TV, link)
 			title := divItem.ChildText(".post-title")
 			preamble := divItem.ChildText(".post-preamble")
 
+			_id := makeHash(fullLink) // here we are going to create hash from full link in order to set ID of a news to hash value, so mongo won't add in case of duplicates
+
 			news = append(news, models.News{
+				ID:         _id,
 				Title:      title,
-				Link:       fmt.Sprintf("%s%s", baseURL_TV, link),
+				Link:       fullLink,
 				Preamble:   preamble,
 				TimeAdded:  time.Now().Unix(),
 				NewsType:   models.TypeBusiness,
-				NewsSource: models.TheVillageNewSource,
+				NewsSource: models.TheVillageNewsSource,
 			})
 		})
 	})
@@ -122,16 +134,20 @@ func (tv TheVillage) runStyle() []models.News {
 	newsCollector.OnHTML(".row-cont", func(divContent *colly.HTMLElement) {
 		divContent.ForEach(".post-block-featured", func(i1 int, divItem *colly.HTMLElement) {
 			link := divItem.ChildAttr("a[href]", "href")
+			fullLink := fmt.Sprintf("%s%s", baseURL_TV, link)
 			title := divItem.ChildText(".post-title")
 			preamble := divItem.ChildText(".post-preamble")
 
+			_id := makeHash(fullLink) // here we are going to create hash from full link in order to set ID of a news to hash value, so mongo won't add in case of duplicates
+
 			news = append(news, models.News{
+				ID:         _id,
 				Title:      title,
-				Link:       fmt.Sprintf("%s%s", baseURL_TV, link),
+				Link:       fullLink,
 				Preamble:   preamble,
 				TimeAdded:  time.Now().Unix(),
 				NewsType:   models.TypeStyle,
-				NewsSource: models.TheVillageNewSource,
+				NewsSource: models.TheVillageNewsSource,
 			})
 		})
 	})
