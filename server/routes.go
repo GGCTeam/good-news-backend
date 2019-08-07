@@ -19,9 +19,6 @@ func NewRouter() *gin.Engine {
 		gin.SetMode(gin.ReleaseMode)
 	}
 
-	// replace with GIN_MODE=release in .env file
-	// gin.SetMode(gin.DebugMode)
-
 	router := gin.New()
 
 	// middlewares
