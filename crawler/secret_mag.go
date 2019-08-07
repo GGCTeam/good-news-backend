@@ -6,6 +6,7 @@ import (
 
 	"github.com/gocolly/colly"
 	"github.com/kanzitelli/good-news-backend/models"
+	"github.com/kanzitelli/good-news-backend/utils"
 )
 
 // SecretMag <struct>
@@ -49,7 +50,7 @@ func (sm SecretMag) runNews() []models.News {
 				fullLink := fmt.Sprintf("%s%s", baseURL_SM, link)
 				title := divItem.ChildText(".headline")
 
-				_id := makeHash(fullLink) // here we are going to create hash from full link in order to set ID of a news to hash value, so mongo won't add in case of duplicates
+				_id := utils.MakeHash(fullLink) // here we are going to create hash from full link in order to set ID of a news to hash value, so mongo won't add in case of duplicates
 
 				news = append(news, models.News{
 					ID:         _id,

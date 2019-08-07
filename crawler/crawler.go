@@ -1,10 +1,9 @@
 package crawler
 
 import (
-	"crypto/sha1"
-	"encoding/hex"
 	"time"
 
+	"github.com/kanzitelli/good-news-backend/db"
 	"github.com/kanzitelli/good-news-backend/models"
 )
 
@@ -33,7 +32,7 @@ func startCrawler() {
 	}
 
 	// duration of each crawling process
-	duration := time.Second * 5 // time.Minute * 3
+	duration := time.Second * 60 // time.Minute * 3
 
 	for range time.Tick(duration) {
 		// all news collected from each crawler
@@ -41,6 +40,9 @@ func startCrawler() {
 
 		for _, cr := range crawlers {
 			totalNews = append(totalNews, cr.Run()...)
+
+			dbClient := db.GetClient()
+			dbClient.NewsInsert(totalNews)
 			// fmt.Println(totalNews)
 
 			// here we run all crawlers
@@ -48,13 +50,4 @@ func startCrawler() {
 			// then trying to insert them to mongo db
 		}
 	}
-}
-
-// makeHash <function>
-// is used to create hash from string
-func makeHash(s string) string {
-	h := sha1.New()
-	h.Write([]byte(s))
-
-	return hex.EncodeToString(h.Sum(nil))
 }
