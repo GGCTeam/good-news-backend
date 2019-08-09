@@ -39,7 +39,7 @@ func (s Service) NewsGet(count int64) ([]models.News, error) {
 	ctx, cncl := s.CTX(5)
 	defer cncl()
 
-	var news []models.News // desc
+	var news []models.News
 	options := options.Find()
 	cur, err := c.Find(
 		ctx,

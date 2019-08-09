@@ -37,3 +37,37 @@ func (nc NewsController) Get(c *gin.Context) {
 
 	c.JSON(http.StatusOK, news)
 }
+
+// GetSources <function>
+// is used to handle get action of news controller which will return all news sources.
+// url: /v1/news/sources
+func (nc NewsController) GetSources(c *gin.Context) {
+	dbClient := db.GetClient()
+	newsSources, err := dbClient.NewsSourcesGet()
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
+			"error":       "Problem with fetching news sources from DB",
+			"description": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, newsSources)
+}
+
+// GetTypes <function>
+// is used to handle get action of news controller which will return all news types.
+// url: /v1/news/sources
+func (nc NewsController) GetTypes(c *gin.Context) {
+	dbClient := db.GetClient()
+	newsTypes, err := dbClient.NewsTypesGet()
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{
+			"error":       "Problem with fetching news types from DB",
+			"description": err.Error(),
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, newsTypes)
+}

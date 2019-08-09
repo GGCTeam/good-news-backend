@@ -37,6 +37,8 @@ func NewRouter() *gin.Engine {
 			nc := controllers.NewsController{}
 
 			news.GET("/", nc.Get)
+			news.GET("/sources", nc.GetSources)
+			news.GET("/types", nc.GetTypes)
 		}
 	}
 
