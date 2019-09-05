@@ -42,6 +42,8 @@ So the steps are:
 - `> db.test_collection.insert({ test: "test" })` - inserting test data to test collection
 - `> show collections` - displaying all collections of our previously created db in order to make sure that our test collection was successfully created
 - `> exit` - saying goodbye to mongo shell
+- `> docker ps` - to show all running docker containers. Find `CONTAINER ID` (first column) of container named `api`.
+- `> docker stop <api_contrainer_id>` - to stop api container. We will rerun it in the next step.
 - `> docker-compose build && docker-compose up -d` - to rebuild our docker container with new settings applied to MongoDB.
 - all credentials for MongoDB should be the same with those which are located in `.env` file in the root of the project (in case if you would like to change them)
 - so now you can open a browser window and go to `localhost:6969/v1/news/sources`. Now you should see news sources which are pre-filled before server launch. After 3 minutes, you will be able to see first news gathered from parsing news sites by opening `localhost:6969/v1/news`. Why 3 minutes? Follow my articles on Medium to understand that 😉
