@@ -10,17 +10,17 @@ I am in process of writing chapters divided to articles on Medium. Below you wil
 
 All chapters of a "book":
 1. [📰 Good News app. Backend in Golang behind Traefik reverse proxy with https available.]() 
-2. [in progress] 📰 Good News app. Flutter for rapid mobile applications development.
-3. [in progress] 📰 Good News app. Hummingbird as a promising replacement for frontend frameworks.
+2. *[in progress]* 📰 Good News app. Flutter for rapid mobile applications development.
+3. *[in progress]* 📰 Good News app. Hummingbird as a promising replacement for frontend frameworks.
 
 And here are articles of current chapter (repository):
 1. [Prerequisites & Idea, project and database structure and API endpoints.]()
 2. [Project creation, go modules & GIN (beautiful framework) integration.]()
-3. [in progress] Colly usage.
-4. [in progress] Traefik v2.0 configuration.
-5. [in progress] MongoDB setup using official Golang driver.
-6. [in progress] Running all together locally with Docker and Docker Compose.
-7. [in progress] Publishing to Digital Ocean, Let's Encrypt and DNS Challenge configuration.
+3. *[in progress]* Colly usage.
+4. *[in progress]* Traefik v2.0 configuration.
+5. *[in progress]* MongoDB setup using official Golang driver.
+6. *[in progress]* Running all together locally with Docker and Docker Compose.
+7. *[in progress]* Publishing to Digital Ocean, Let's Encrypt and DNS Challenge configuration.
 
 # Prerequisites
 In order to launch this project locally, you have to have [Golang](https://golang.org/) and [Docker](https://docs.docker.com/v17.12/install/) installed on your machine.
