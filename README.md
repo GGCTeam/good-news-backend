@@ -6,16 +6,16 @@
 # Contents
 I am in process of writing chapters divided to articles on Medium. Below you will find links to them. They will be updated as I finish working on them.
 
-[Introductory article]() - here you will find all the introductory information and links to other chapters as well.
+[Introductory article](https://medium.com/@kanzitelli/good-news-app-golang-flutter-hummingbird-1949f22b299f) - here you will find all the introductory information and links to other chapters as well.
 
 All chapters of a "book":
-1. [📰 Good News app. Backend in Golang behind Traefik reverse proxy with https available.]() 
+1. [📰 Good News app. Backend in Golang behind Traefik reverse proxy with https available.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-behind-traefik-reverse-proxy-with-https-available-2165b11467e4) 
 2. *[in progress]* 📰 Good News app. Flutter for rapid mobile applications development.
 3. *[in progress]* 📰 Good News app. Hummingbird as a promising replacement for frontend frameworks.
 
 And here are articles of current chapter (repository):
-1. [Prerequisites & Idea, project and database structure and API endpoints.]()
-2. [Project creation, go modules & GIN (beautiful framework) integration.]()
+1. [Prerequisites & Idea, project and database structure and API endpoints.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-behind-traefik-reverse-proxy-with-https-available-2165b11467e4)
+2. *[in progress]* Project creation, go modules & GIN (beautiful framework) integration.
 3. *[in progress]* Colly usage.
 4. *[in progress]* Traefik v2.0 configuration.
 5. *[in progress]* MongoDB setup using official Golang driver.
