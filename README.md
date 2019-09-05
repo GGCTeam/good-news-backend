@@ -23,7 +23,7 @@ And here are articles of current chapter (repository):
 7. [in progress] Publishing to Digital Ocean, Let's Encrypt and DNS Challenge configuration.
 
 # Prerequisites
-In order to try launching this project locally, you have to have [Golang](https://golang.org/) and [Docker](https://docs.docker.com/v17.12/install/) installed on your machine.
+In order to launch this project locally, you have to have [Golang](https://golang.org/) and [Docker](https://docs.docker.com/v17.12/install/) installed on your machine.
 
 **NOTICE:** code in this repository is not a final version of what I have been telling in my articles. For example, if you would like to know how to publish this project on Digital Ocean droplet behind Traefik reverse proxy with https available on your own domain, you will need to follow all articles above. 
 
