@@ -15,7 +15,7 @@ All chapters of a "book":
 
 And here are articles of current chapter (repository):
 1. [Prerequisites & Idea, project and database structure and API endpoints.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-behind-traefik-reverse-proxy-with-https-available-2165b11467e4)
-2. *[in progress]* Project creation, go modules & GIN (beautiful framework) integration.
+2. [Project creation, go modules & GIN (beautiful framework) integration.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-project-creation-go-modules-gin-integration-237960136b4c)
 3. *[in progress]* Colly usage.
 4. *[in progress]* Traefik v2.0 configuration.
 5. *[in progress]* MongoDB setup using official Golang driver.
