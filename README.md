@@ -1,4 +1,4 @@
-![📰 Good News app](https://miro.medium.com/max/3840/1*DFwfsEUSdDbZ6d4pf2JC5g.png)
+![📰 Good News app](https://miro.medium.com/max/3840/1*bf7idsl5jS_aic9toUVUWA.png)
 
 # Intentions
 **📰Good News app** is a fully open source project created exceptionally for educational purposes. It contains [backend](https://github.com/kanzitelli/good-news-backend) (you can see the response of it if you open this link `https://api.good-news.ggc.team/v1/news/`) written in [Golang](https://golang.org/), iOS & Android mobile apps (which I will publish to App Store and Google Play) made with [Flutter](https://flutter.dev/) and frontend made with [Hummingbird (Flutter for web)](https://github.com/flutter/flutter_web). Links to repositories for code of mobile apps and frontend will be added later when as soon as I finish working on them. My code is not going to be perfect due to the fact that I am not a super professional in any of those topics but I will do my best, promise ✌️ I am a supporter of an idea of sharing knowledge with the world because it is always good to share what you have learnt with those who might struggle with the same issues you faced and by doing it I will learn something new as well. WIN-WIN strategy. 
@@ -17,10 +17,9 @@ And here are articles of current chapter (repository):
 1. [Prerequisites & Idea, project and database structure and API endpoints.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-behind-traefik-reverse-proxy-with-https-available-2165b11467e4)
 2. [Project creation, go modules & GIN (beautiful framework) integration.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-project-creation-go-modules-gin-integration-237960136b4c)
 3. *[in progress]* Colly usage.
-4. *[in progress]* Traefik v2.0 configuration.
-5. *[in progress]* MongoDB setup using official Golang driver.
-6. *[in progress]* Running all together locally with Docker and Docker Compose.
-7. *[in progress]* Publishing to Digital Ocean, Let's Encrypt and DNS Challenge configuration.
+4. *[in progress]* MongoDB setup using official Golang driver.
+5. *[in progress]* Running all together locally with Docker and Docker Compose & Traefik v2.0 configuration.
+6. *[in progress]* Publishing to Digital Ocean, Let's Encrypt and DNS Challenge configuration.
 
 # Prerequisites
 In order to launch this project locally, you have to have [Golang](https://golang.org/) and [Docker](https://docs.docker.com/v17.12/install/) installed on your machine.
