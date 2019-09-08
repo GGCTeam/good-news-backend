@@ -15,9 +15,9 @@ type TheVillage struct{}
 
 const (
 	baseURL_TV           = "https://www.the-village.ru"
-	crawlURL_News_TP     = "https://www.the-village.ru/news"
-	crawlURL_Business_TP = "https://www.the-village.ru/village/business"
-	crawlURL_Style_TP    = "https://www.the-village.ru/village/service-shopping"
+	crawlURL_News_TV     = "https://www.the-village.ru/news"
+	crawlURL_Business_TV = "https://www.the-village.ru/village/business"
+	crawlURL_Style_TV    = "https://www.the-village.ru/village/service-shopping"
 )
 
 // Run <function>
@@ -83,7 +83,7 @@ func (tv TheVillage) runNews() []models.News {
 		})
 	})
 
-	newsCollector.Visit(crawlURL_News_TP)
+	newsCollector.Visit(crawlURL_News_TV)
 	newsCollector.Wait()
 
 	return news
@@ -117,7 +117,7 @@ func (tv TheVillage) runBusiness() []models.News {
 		})
 	})
 
-	newsCollector.Visit(crawlURL_Business_TP)
+	newsCollector.Visit(crawlURL_Business_TV)
 	newsCollector.Wait()
 
 	return news
@@ -151,7 +151,7 @@ func (tv TheVillage) runStyle() []models.News {
 		})
 	})
 
-	newsCollector.Visit(crawlURL_Style_TP)
+	newsCollector.Visit(crawlURL_Style_TV)
 	newsCollector.Wait()
 
 	return news
