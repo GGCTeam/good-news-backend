@@ -56,7 +56,8 @@ func (s Service) CTX(secs time.Duration) (context.Context, context.CancelFunc) {
 }
 
 // Collection <function>
-// is used to get easy access to bussiness collection in database
+// is used to get easy access to any collection in database
+// it generates a mongo collection instance from a given string in parameters.
 func (s Service) Collection(colName string) *mongo.Collection {
 	envVars := utils.GetEnvVars()
 
