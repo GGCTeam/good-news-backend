@@ -17,7 +17,7 @@ And here are articles of current chapter (repository):
 1. [Prerequisites & Idea, project and database structure and API endpoints.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-behind-traefik-reverse-proxy-with-https-available-2165b11467e4)
 2. [Project creation, go modules & GIN (beautiful framework) integration.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-project-creation-go-modules-gin-integration-237960136b4c)
 3. [Colly usage.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-colly-usage-325ded0b5d34)
-4. *[in progress]* MongoDB setup using official Golang driver.
+4. [MongoDB setup using official Golang driver.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-mongodb-setup-using-official-golang-driver-e1994473c8c0)
 5. *[in progress]* Running all together locally with Docker and Docker Compose & Traefik v2.0 configuration.
 6. *[in progress]* Publishing to Digital Ocean, Let's Encrypt and DNS Challenge configuration.
 
