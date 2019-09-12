@@ -35,7 +35,7 @@ So the steps are:
 - `> docker-compose build && docker-compose up -d`
 - ... wait for some time till whole process is finished
 - open a browser window and go to `localhost:6969/v1/news/sources`. You should see nothing, right. Because we need to configure MongoDB as well 🙂
-- `docker exec -it mongo mongo -u "GGCTeamBatr" -p "MySuperSecretPassword" --authenticationDatabase admin` - to open shell of mongo db running within our docker container
+- `> docker exec -it mongo mongo -u "GGCTeamBatr" -p "MySuperSecretPassword" --authenticationDatabase admin` - to open shell of mongo db running within our docker container
 - `> use good_news_db` - so we change (create) to needed db
 - `> db.createUser({user: 'suuuper_user', pwd: 'soop3r_U$eR_PSWD', roles:[{role:'dbOwner', db:'good_news_db'}]})` - creating a super user 
 - `> db.test_collection.insert({ test: "test" })` - inserting test data to test collection
