@@ -18,7 +18,7 @@ And here are articles of current chapter (repository):
 2. [Project creation, go modules & GIN (beautiful framework) integration.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-project-creation-go-modules-gin-integration-237960136b4c)
 3. [Colly usage.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-colly-usage-325ded0b5d34)
 4. [MongoDB setup using official Golang driver.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-mongodb-setup-using-official-golang-driver-e1994473c8c0)
-5. *[in progress]* Running all together locally with Docker and Docker Compose & Traefik v2.0 configuration.
+5. [Running all together locally with Docker and Docker Compose & Traefik v2.0 configuration.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-docker-compose-traefik-v2-0-54545f5590ed)
 6. *[in progress]* Publishing to Digital Ocean, Let's Encrypt and DNS Challenge configuration.
 
 # Prerequisites
