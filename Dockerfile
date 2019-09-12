@@ -27,7 +27,7 @@ COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 COPY --from=builder /app /app
 
-# so our images are available in the last container
+# so our images are available in the final container
 COPY --from=builder /images /images
 
 EXPOSE 80
