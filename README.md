@@ -19,7 +19,7 @@ And here are articles of current chapter (repository):
 3. [Colly usage.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-colly-usage-325ded0b5d34)
 4. [MongoDB setup using official Golang driver.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-mongodb-setup-using-official-golang-driver-e1994473c8c0)
 5. [Running all together locally with Docker and Docker Compose & Traefik v2.0 configuration.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-docker-compose-traefik-v2-0-54545f5590ed)
-6. *[in progress]* Publishing to Digital Ocean, Let's Encrypt and DNS Challenge configuration.
+6. [Publishing to Digital Ocean, Let's Encrypt and DNS Challenge configuration.](https://medium.com/@kanzitelli/good-news-app-backend-in-golang-digital-ocean-lets-encrypt-and-dns-challenge-a8e44d1be7ec)
 
 # Prerequisites
 In order to launch this project locally, you have to have [Golang](https://golang.org/) and [Docker](https://docs.docker.com/v17.12/install/) installed on your machine.
